@@ -65,23 +65,41 @@ a:hover {
 /* Chapter Navigation */
 .chapter-nav {
     background-color: #111;
-    padding: 10px 20px;
+    padding: 10px 5px;
     position: sticky;
     top: 0;
     z-index: 1000;
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+    scrollbar-color: #f0a500 #222;
+}
+
+.chapter-nav::-webkit-scrollbar {
+    height: 6px;
+}
+
+.chapter-nav::-webkit-scrollbar-track {
+    background: #222;
+}
+
+.chapter-nav::-webkit-scrollbar-thumb {
+    background: #f0a500;
+    border-radius: 3px;
 }
 
 .chapter-nav ul {
-    display: flex;
-    flex-wrap: wrap;
+    display: inline-block;
     list-style: none;
     margin: 0;
     padding: 0;
-    justify-content: center;
+    min-width: 100%;
 }
 
 .chapter-nav li {
-    margin: 5px 10px;
+    display: inline-block;
+    margin: 5px 8px;
 }
 
 /* Main Content */
@@ -135,9 +153,22 @@ footer {
     .cover .subtitle {
         font-size: 1.2em;
     }
-
-    .chapter-nav ul {
-        flex-direction: column;
-        align-items: center;
+    
+    .chapter-nav {
+        padding: 8px 3px;
+    }
+    
+    .chapter-nav li {
+        margin: 5px 6px;
+    }
+    
+    .chapter-nav a {
+        font-size: 0.9em;
+        padding: 5px 8px;
+        display: inline-block;
+    }
+    
+    main {
+        padding: 15px;
     }
 }
